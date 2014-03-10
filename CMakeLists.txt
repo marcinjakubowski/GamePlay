@@ -11,6 +11,11 @@ if ( "${CMAKE_BUILD_TYPE}" STREQUAL "DEBUG" )
     add_definitions(-D_DEBUG)
 endif()
 
+if ( "${MEMLEAK_DETECTION}" STREQUAL "1" )
+    add_definitions(-DGP_USE_MEM_LEAK_DETECTION)
+    message( "MemLeak Detection enabled" )
+endif()
+
 # architecture
 if ( CMAKE_SIZEOF_VOID_P EQUAL 8 )
 set(ARCH_DIR "x64")
@@ -25,5 +30,6 @@ add_subdirectory(gameplay)
 add_subdirectory(samples)
 
 # gameplay encoder
-# A pre-compiled executable can be found in 'gameplay/bin'. Uncomment to build yourself.
+# A pre-compiled executable can be found in 'gameplay/bin'
+# Uncomment out this line if you want to build the encoder instead of using the pre-compiled gameplay-encoder.
 #add_subdirectory(tools/encoder)

@@ -461,7 +461,7 @@ void Sprite::draw(bool isolateDraw)
 {
 	SpriteBatch* batch = _tileSheet->getSpriteBatch();
 
-	static Vector2 rotationPoint = Vector2::one() * 0.5f;
+	static Vector2 rotationPoint = Vector2::zero() * 0.5f;
 
 	Vector3 pos;
 	Vector2 size = Vector2(_width, _height);
