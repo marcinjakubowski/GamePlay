@@ -17,7 +17,7 @@ import com.google.android.gms.games.achievement.Achievement;
 import com.google.android.gms.games.achievement.AchievementBuffer;
 import com.google.android.gms.games.achievement.OnAchievementsLoadedListener;
 import com.google.android.gms.games.OnPlayersLoadedListener;
-import com.google.android.gms.games.leaderboard.LeaderboardBuffer;
+import com.google.android.gms.games.leaderboard.Leaderboard;
 import com.google.android.gms.games.leaderboard.LeaderboardScore;
 import com.google.android.gms.games.leaderboard.LeaderboardScoreBuffer;
 import com.google.android.gms.games.leaderboard.LeaderboardVariant;
@@ -290,7 +290,7 @@ public class GooglePlaySocial extends NativeActivity
      * Called when leaderboard scores are loaded. 
      */
     @Override
-    public void onLeaderboardScoresLoaded(int statusCode, LeaderboardBuffer leaderboard,
+    public void onLeaderboardScoresLoaded(int statusCode, Leaderboard leaderboard,
             LeaderboardScoreBuffer scores) {
 
         // STATUS_OK means we got fresh data from the server;
@@ -318,7 +318,6 @@ public class GooglePlaySocial extends NativeActivity
 		// signal the end of the list
 		native_ReportLeaderboardEntry(GamesClient.STATUS_OK, i, null, null, -1);
 		
-		leaderboard.close();
 		scores.close();
     }
 	
