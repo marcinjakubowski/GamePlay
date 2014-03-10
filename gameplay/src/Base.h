@@ -331,7 +331,8 @@ typedef GLuint RenderBufferHandle;
 	#include <android_native_app_glue.h>
     typedef AInputEvent PlatformEvent;
 #else
-    typedef XEvent PlatformEvent;
+    union _XEvent;
+    typedef _XEvent PlatformEvent;
 #endif
 
 /**
