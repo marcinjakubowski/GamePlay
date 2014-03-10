@@ -6426,9 +6426,37 @@ int lua_Form_static_getActiveControl(lua_State* state)
             return 1;
             break;
         }
+        case 1:
+        {
+            if (lua_type(state, 1) == LUA_TNUMBER)
+            {
+                // Get parameter 1 off the stack.
+                unsigned int param1 = (unsigned int)luaL_checkunsigned(state, 1);
+
+                void* returnPtr = (void*)Form::getActiveControl(param1);
+                if (returnPtr)
+                {
+                    gameplay::ScriptUtil::LuaObject* object = (gameplay::ScriptUtil::LuaObject*)lua_newuserdata(state, sizeof(gameplay::ScriptUtil::LuaObject));
+                    object->instance = returnPtr;
+                    object->owns = false;
+                    luaL_getmetatable(state, "Control");
+                    lua_setmetatable(state, -2);
+                }
+                else
+                {
+                    lua_pushnil(state);
+                }
+
+                return 1;
+            }
+
+            lua_pushstring(state, "lua_Form_static_getActiveControl - Failed to match the given parameters to a valid function signature.");
+            lua_error(state);
+            break;
+        }
         default:
         {
-            lua_pushstring(state, "Invalid number of parameters (expected 0).");
+            lua_pushstring(state, "Invalid number of parameters (expected 0 or 1).");
             lua_error(state);
             break;
         }
