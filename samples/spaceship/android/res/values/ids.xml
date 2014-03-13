@@ -16,17 +16,17 @@
 -->
 <resources>
     <!-- TODO: Replace this by your app's app ID! -->
-    <string name="app_id">991348637436</string>
+    <string name="app_id">74835682991</string>
 
     <!-- TODO: Replace these by your achievement/leaderboard IDs! -->
-    <string name="achievement_firsttime">CgkI_P3uh-0cEAIQAQ</string>
-    <string name="achievement_clean_run">CgkI_P3uh-0cEAIQAg</string>
-    <string name="achievement_under20">CgkI_P3uh-0cEAIQAw</string>
-    <string name="achievement_warp">CgkI_P3uh-0cEAIQBA</string>
-    <string name="achievement_ludicrous">CgkI_P3uh-0cEAIQBQ</string>
-    <string name="achievement_tentimes">CgkI_P3uh-0cEAIQBg</string>
-    <string name="achievement_fiftytimes">CgkI_P3uh-0cEAIQCA</string>
-    <string name="achievement_hundredtimes">CgkI_P3uh-0cEAIQBw</string>
+    <string name="achievement_firsttime">CgkIr8235JYCEAIQAQ</string>
+    <string name="achievement_clean_run">CgkIr8235JYCEAIQAg</string>
+    <string name="achievement_under20">CgkIr8235JYCEAIQAw</string>
+    <string name="achievement_warp">CgkIr8235JYCEAIQBA</string>
+    <string name="achievement_ludicrous">CgkIr8235JYCEAIQBQ</string>
+    <string name="achievement_tentimes">CgkIr8235JYCEAIQBg</string>
+    <string name="achievement_fiftytimes">CgkIr8235JYCEAIQBw</string>
+    <string name="achievement_hundredtimes">CgkIr8235JYCEAIQCA</string>
 
-    <string name="leaderboard">CgkI_P3uh-0cEAIQAA</string>
+    <string name="leaderboard">CgkIr8235JYCEAIQCQ</string>
 </resources>
