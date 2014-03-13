@@ -14,7 +14,7 @@ extern struct android_app* __state;
 #define SIGNIN_SUCCEEDED 2
 static int _signInStatus = SIGNIN_FAILED;
 
-JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_native_1ReportSignInState(JNIEnv *env, jobject thiz, jboolean signedIn, jboolean inProgress)
+JNIEXPORT void JNICALL Java_org_gameplay3d_social_GooglePlaySocial_native_1ReportSignInState(JNIEnv *env, jobject thiz, jboolean signedIn, jboolean inProgress)
 {
     int newState = inProgress ? SIGNIN_IN_PROGRESS : signedIn ? SIGNIN_SUCCEEDED : SIGNIN_FAILED;
     __atomic_swap(newState, &_signInStatus);
@@ -25,7 +25,7 @@ JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_na
     }
 }
 
-JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_native_1ReportUserEntry(JNIEnv *env, jobject thiz, jstring name, jstring id)
+JNIEXPORT void JNICALL Java_org_gameplay3d_social_GooglePlaySocial_native_1ReportUserEntry(JNIEnv *env, jobject thiz, jstring name, jstring id)
 {
 	const char *nameStr = env->GetStringUTFChars(name, 0);
 	const char *idStr = env->GetStringUTFChars(id, 0);
@@ -34,7 +34,7 @@ JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_na
 	env->ReleaseStringUTFChars(id, idStr);
 }
 
-JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_native_1ReportAchievementEntry(JNIEnv *env, jobject thiz, jint errorStatus, jstring name, jstring title, jstring dateAchieved, jint value, jint total)
+JNIEXPORT void JNICALL Java_org_gameplay3d_social_GooglePlaySocial_native_1ReportAchievementEntry(JNIEnv *env, jobject thiz, jint errorStatus, jstring name, jstring title, jstring dateAchieved, jint value, jint total)
 {
 	if (errorStatus != 0)
 	{
@@ -56,7 +56,7 @@ JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_na
 	}
 }
 
-JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_native_1ReportLeaderboardEntry(JNIEnv *env, jobject thiz, jint errorStatus, jint index, jstring playerId, jstring playerName, jint score)
+JNIEXPORT void JNICALL Java_org_gameplay3d_social_GooglePlaySocial_native_1ReportLeaderboardEntry(JNIEnv *env, jobject thiz, jint errorStatus, jint index, jstring playerId, jstring playerName, jint score)
 {
 	if (errorStatus != 0)
 	{
@@ -74,7 +74,7 @@ JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_na
 	}
 }
 
-JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_native_1ReportFriendEntry(JNIEnv *env, jobject thiz, jint errorStatus, jstring playerName, jstring playerId)
+JNIEXPORT void JNICALL Java_org_gameplay3d_social_GooglePlaySocial_native_1ReportFriendEntry(JNIEnv *env, jobject thiz, jint errorStatus, jstring playerName, jstring playerId)
 {
 	if (errorStatus != 0)
 	{
@@ -92,7 +92,7 @@ JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_na
 	}
 }
 
-JNIEXPORT void JNICALL Java_org_gameplay3d_sample_1spaceship_GooglePlaySocial_native_1ReportCloudLoadResult(JNIEnv *env, jobject thiz, jint errorStatus, jstring data)
+JNIEXPORT void JNICALL Java_org_gameplay3d_social_GooglePlaySocial_native_1ReportCloudLoadResult(JNIEnv *env, jobject thiz, jint errorStatus, jstring data)
 {
 	if (errorStatus != 0)
 	{

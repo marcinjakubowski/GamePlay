@@ -1,5 +1,4 @@
-
-package org.gameplay3d.sample_spaceship;
+package org.gameplay3d.social;
 
 import android.util.Log;
 import android.view.Gravity;

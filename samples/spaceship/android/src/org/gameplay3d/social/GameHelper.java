@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package org.gameplay3d.sample_spaceship;
+package org.gameplay3d.social;
+
+import org.gameplay3d.sample_spaceship.R;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
