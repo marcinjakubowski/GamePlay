@@ -1254,7 +1254,7 @@ int Platform::enterMessagePump()
             //    being lost. Requires us to re-create and re-initalize our EGL context
             //    and all OpenGL ES state.
             //
-            // For now, if we get these, we'll simply exit.
+            // For now, if we get these, we'll simply ignore.
             int rc = eglSwapBuffers(__eglDisplay, __eglSurface);
             if (rc != EGL_TRUE)
             {
@@ -1270,8 +1270,7 @@ int Platform::enterMessagePump()
                 }
                 else
                 {
-                    perror("eglSwapBuffers");
-                    break;
+                    GP_WARN("eglSwapBuffers error, ignoring. Check log for more details.");
                 }
             }
         }
